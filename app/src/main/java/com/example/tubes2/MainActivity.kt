@@ -108,10 +108,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun intentEdit(noteid:Int, intentType: Int){
+    fun intentEdit(noteId:Int, intentType: Int){
         startActivity(
                 Intent(applicationContext,EditActivity::class.java)
-                        .putExtra("intent_id",noteid)
+                        .putExtra("intent_id",noteId)
                         .putExtra("intent_type", intentType)
         )
     }

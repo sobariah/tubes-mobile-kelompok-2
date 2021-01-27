@@ -21,8 +21,8 @@ class EditActivity : AppCompatActivity() {
         setContentView(R.layout.activity_edit)
         setupView()
         setupListener()
-
-//        Toast.makeText(this, noteId.toString(), Toast.LENGTH_SHORT).show()
+////     noteId=intent.getIntExtra("intent_id",0  )
+//       Toast.makeText(this, noteId.toString(), Toast.LENGTH_SHORT).show()
     }
 
     fun setupView(){
@@ -66,7 +66,8 @@ class EditActivity : AppCompatActivity() {
     fun getNote(){
         noteId = intent.getIntExtra("intent_id",0)
         CoroutineScope(Dispatchers.IO).launch {
-           var notes=db.noteDao().getNote(noteId)[0]
+//           val notes=db.noteDao().getNote(note_id = noteId)[0]
+            val notes=db.noteDao().getNote(note_id = noteId)[0]
             edit_title.setText(notes.title)
             edit_note.setText(notes.note)
         }
